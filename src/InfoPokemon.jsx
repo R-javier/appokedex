@@ -92,17 +92,11 @@ function InfoPokemon() {
               ></Image>
             </Stack>
           </Box>
-          <Box
-            h={80}
-            pt={12}
-            bgImage="https://images6.alphacoders.com/884/thumb-1920-884402.jpg"
-            borderRadius="30px 30px 0px 0px"
-            background="#fff"
-          >
+          <Box h={80} pt={12} borderRadius="30px 30px 0px 0px">
             <Tabs variant="soft-rounded" isFitted height="auto">
               <TabList>
-                <Tab>About</Tab>
-                <Tab>Stats</Tab>
+                <Tab color="">About</Tab>
+                <Tab color="">Stats</Tab>
               </TabList>
 
               <TabPanels>
@@ -113,12 +107,7 @@ function InfoPokemon() {
                   width="100%"
                   justifyContent="space-between"
                 >
-                  <Table
-                    color="blackAlpha.600"
-                    fontWeight="bolder"
-                    h="auto"
-                    w="70%"
-                  >
+                  <Table fontWeight="bolder" h="auto" w="70%">
                     <tbody>
                       <tr>
                         <td>Height</td>
@@ -130,7 +119,7 @@ function InfoPokemon() {
                       </tr>
                       <tr>
                         <td>Abilities</td>
-                        <td> </td>
+                        <td> {data.types[0].type.name} </td>
                       </tr>
                     </tbody>
                   </Table>
@@ -142,12 +131,7 @@ function InfoPokemon() {
                   width="100%"
                   justifyContent="space-around"
                 >
-                  <Table
-                    color="blackAlpha.600"
-                    fontWeight="bolder"
-                    h="auto"
-                    w="100%"
-                  >
+                  <Table fontWeight="bolder" h="auto" w="100%">
                     <tbody>
                       <tr>
                         <td>HP</td>
@@ -156,6 +140,7 @@ function InfoPokemon() {
                           size="xs"
                           w={60}
                           hasStripe
+                          as="td"
                           value={`${data.stats[0].base_stat}`}
                         />
                       </tr>
@@ -166,6 +151,7 @@ function InfoPokemon() {
                           size="xs"
                           w={60}
                           hasStripe
+                          as="td"
                           value={`${data.stats[1].base_stat}`}
                         />
                       </tr>
@@ -175,6 +161,7 @@ function InfoPokemon() {
                         <Progress
                           size="xs"
                           w={60}
+                          as="td"
                           hasStripe
                           value={`${data.stats[2].base_stat}`}
                         />
@@ -185,16 +172,18 @@ function InfoPokemon() {
                         <Progress
                           size="xs"
                           w={60}
+                          as="td"
                           hasStripe
                           value={`${data.stats[3].base_stat}`}
                         />
                       </tr>
-                      <tr>
+                      <tr mb={2}>
                         <td>Sp.Def</td>
                         <td>{data.stats[4].base_stat}</td>
                         <Progress
                           size="xs"
                           w={60}
+                          as="td"
                           hasStripe
                           value={`${data.stats[4].base_stat}`}
                         />
@@ -208,6 +197,7 @@ function InfoPokemon() {
                           size="xs"
                           w={60}
                           hasStripe
+                          as="td"
                           value={`${data.stats[5].base_stat}`}
                         />
                       </tr>
